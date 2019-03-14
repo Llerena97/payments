@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  resources :charges, only: [:new, :create]
   root 'charges#index'
+  resources :charges, only: [:new, :create]
+  get "payu/response", to: "payu#result"
+  get "payu/confirmation", to: "payu#confirmation"
 end
